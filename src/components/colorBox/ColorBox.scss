@@ -1,0 +1,9 @@
+$box-size: 400px;
+
+.ColorBox {
+    width: $box-size;
+    height: $box-size;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
