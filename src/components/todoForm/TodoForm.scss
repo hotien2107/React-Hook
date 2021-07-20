@@ -1,0 +1,20 @@
+@mixin input-style {
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 400px;
+    padding: 10px;
+}
+
+
+
+input {
+    @include input-style();
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+
+    &:focus {
+        outline: none;
+        background-color: #eee;
+    }
+
+}

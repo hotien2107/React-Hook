@@ -1,0 +1,47 @@
+$color-light: #ff8585;
+$color-basic: #ff4646;
+$color-dark: #da0037;
+
+@mixin ul-style() {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+@mixin li-style {
+  width: 400px;
+  padding: 5px 10px;
+}
+
+ul {
+  text-align: left;
+  @include ul-style;
+  display: inline-block;
+}
+
+.list-item {
+  @include li-style();
+  background-color: $color-light;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  
+
+  &:hover {
+    background-color: $color-basic;
+  }
+  &:hover .iconDelete {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.iconDelete {
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+}

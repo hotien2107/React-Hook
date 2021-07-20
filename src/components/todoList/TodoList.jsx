@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { HighlightOff } from "@material-ui/icons"
+
+import "./TodoList.scss"
 
 TodoList.propTypes = {
     list: PropTypes.array,
@@ -12,19 +15,27 @@ TodoList.defaultProps = {
 }
 
 function TodoList(props) {
-    const {list, deleteItemClick} = props;
+    const { list, deleteItemClick } = props;
 
     function handleDeleteItemClick(item) {
-        if(!deleteItemClick) return;
+        if (!deleteItemClick) return;
         deleteItemClick(item)
     }
 
     return (
-        <ul>
+        <ul className="ul-style">
             {
                 list.map(item => {
                     return (
-                        <li key={item.id} onClick={() => handleDeleteItemClick(item)}>{item.title}</li>
+                        <li
+                            key={item.id}
+                            onClick={() => handleDeleteItemClick(item)}
+                            className="list-item"
+                        >
+                            {item.title}
+
+                            <HighlightOff className="iconDelete" />
+                        </li>
                     )
                 })
 
