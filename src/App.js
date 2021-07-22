@@ -8,6 +8,7 @@ import PostList from "./components/postList/PostList";
 import TodoForm from "./components/todoForm/TodoForm";
 import TodoList from "./components/todoList/TodoList";
 import SearchForm from "./components/searchForm/SearchForm";
+import Clock from "./components/clock/Clock";
 
 function App() {
   const list = localStorage["todoList"];
@@ -91,12 +92,14 @@ function App() {
 
   return (
     <div className="App">
-      <div className="currentPage">
+      <Clock/>
+
+      {/* <div className="currentPage">
         {filters._page}
       </div>
       <SearchForm onSearchSubmit={onSearchSubmit}/>
       <PostList postList={postList} />
-      <Pagination pagination={pagination} onPageChange={onPageChange} />
+      <Pagination pagination={pagination} onPageChange={onPageChange} /> */}
       {/* <TodoForm onSubmit={handleTodoSubmit} />
       <TodoList list={todoList} deleteItemClick={deleteItemClick} /> */}
     </div>
