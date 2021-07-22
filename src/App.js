@@ -7,6 +7,7 @@ import Pagination from "./components/pagination/Pagination";
 import PostList from "./components/postList/PostList";
 import TodoForm from "./components/todoForm/TodoForm";
 import TodoList from "./components/todoList/TodoList";
+import SearchForm from "./components/searchForm/SearchForm";
 
 function App() {
   const list = localStorage["todoList"];
@@ -80,11 +81,20 @@ function App() {
     });
   }
 
+  function onSearchSubmit(searchValue) {
+    setFilters({
+      ...filters,
+      _page: 1,
+      title_like: searchValue.value,
+    })
+  }
+
   return (
     <div className="App">
       <div className="currentPage">
         {filters._page}
       </div>
+      <SearchForm onSearchSubmit={onSearchSubmit}/>
       <PostList postList={postList} />
       <Pagination pagination={pagination} onPageChange={onPageChange} />
       {/* <TodoForm onSubmit={handleTodoSubmit} />
