@@ -14,12 +14,13 @@ SearchForm.defaultProps = {
 
 function SearchForm(props) {
     const {onSearchSubmit} = props;
+    
     const [searchInput, setSearchInput] = useState('');
 
     function changeSearchInput(e) {
         setSearchInput(e.target.value);
     };
-    
+
     function handleSearchSubmit(e) {
         
         e.preventDefault();
